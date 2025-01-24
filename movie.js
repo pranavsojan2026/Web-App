@@ -4,7 +4,7 @@ let result = document.getElementById("result");
 
 let getMovie = () => {
         let movieName = movieNameRef.value.trim(); // Use .value to get input
-        let key = "88413a7e"; // Replace with your actual API key
+        let key = "44807004"; // Replace with your actual API key
         let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
 
         if (movieName.length === 0) {
