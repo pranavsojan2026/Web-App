@@ -4,8 +4,8 @@ let result = document.getElementById("result");
 
 let getMovie = () => {
         let movieName = movieNameRef.value.trim(); // Use .value to get input
-        let key = "44807004"; // Replace with your actual API key
-        let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
+        let key = "88413a7e"; // Replace with your actual API key
+        let url = `https://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
 
         if (movieName.length === 0) {
             result.innerHTML = `<h3 class="msg">Please Enter a Movie Name</h3>`;
@@ -42,8 +42,9 @@ let getMovie = () => {
                     result.innerHTML = `<h3 class="msg">${data.Error}</h3>`;
                 }
             })
-            .catch(() => {
-                result.innerHTML = `<h3 class="msg">Error Occurred</h3>`;
+            .catch((error) => {
+                console.error('API Error:', error);
+                result.innerHTML = `<h3 class="msg">Error Occurred: ${error.message}</h3>`;
             });
     }
 };
